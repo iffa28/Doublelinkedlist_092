@@ -13,6 +13,9 @@ public:
 class DoubleLinkedList {
 private:
     node* START = NULL; 
+public:
+
+    void addNote(); 
 };
 
 int main()
