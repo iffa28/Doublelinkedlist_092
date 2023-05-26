@@ -170,7 +170,7 @@ void DoubleLinkedList::searchData() {
 
 int main() {
     DoubleLinkedList obj;
-    while (true) {
+    while (true) { 
         try {
             cout << "\nMenu" << endl;
             cout << "1. Add a record to the list" << endl;
