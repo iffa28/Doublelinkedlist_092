@@ -12,7 +12,7 @@ public:
 
 class DoubleLinkedList {
 private:
-    node* START = NULL;
+    node* START = NULL; 
 };
 
 int main()
