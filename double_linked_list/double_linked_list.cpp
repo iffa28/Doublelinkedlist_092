@@ -15,7 +15,7 @@ private:
     Node* START = NULL; 
 public:
 
-    void addNote(); 
+    void addNode(); 
     bool search(int rollNo, Node** previous, Node** current);
     bool deleteNode(int rollNo);
     bool listEmpty();
@@ -28,6 +28,7 @@ public:
 void DoubleLinkedList::addNode() {
     int nim;
     string nm;
+
     cout << "\nEnter the roll number of the student: ";
     cin >> nim;
     cout << "\nEnter the name of the student: ";
@@ -39,21 +40,17 @@ void DoubleLinkedList::addNode() {
 
     /*insert a node in the beginning of doubly - linked list*/
     if (START == NULL || nim <= START->noMhs) { // check if data null
-        cout << "\nDuplicate number not allowed" << endl;
+        if (START != NULL && nim == START->noMhs) {
+            cout << "\nDuplicate number not allowed" << endl;
+            return;
+        }
+        newNode->next = START; //step 3
+        if (START != NULL)
+            START->prev = newNode;  // step 4
+        newNode->prev = NULL; // step 5
+        START = newNode; // step 6
+        return;
     }
-}
-int main()
-{
-    std::cout << "Hello World!\n";
-}
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    /*Inserting a node between two nodes in the list*/
+}
