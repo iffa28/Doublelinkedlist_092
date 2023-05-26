@@ -34,7 +34,7 @@ void DoubleLinkedList::addNode() {
     cin >> nm;
 
     Node* newNode = new Node(); // step 1
-    newNode->noMhs = nim; // step 2
+    newNode->noMhs = nim; // step 2  
 }
 int main()
 {
